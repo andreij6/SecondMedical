@@ -1,0 +1,91 @@
+html {
+  height: 100%; }
+
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  background-color: #989797;
+  height: 100%; }
+
+.Alegrey, .content h4, .content .nav-justified li a:hover, .content .nav-justified li a.Page, .content .fc-header-title h2, .content .fc-day-number, .DivBtn, .AddTeam, .ScheduleGame {
+  font-family: 'Alegreya Sans SC', sans-serif; }
+
+.content {
+  background-color: #7f7d7d;
+  border-radius: 10px;
+  padding: 0px;
+  min-height: 50%;
+  margin-bottom: 75px; }
+  .content .list {
+    padding: 0px; }
+  .content .nav-header {
+    padding: 10px;
+    font-family: Calibri;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #a5a4a4; }
+  .content .nav-stacked li a {
+    border-radius: 0;
+    color: #e0e0df;
+    text-align: center;
+    border-bottom: 1px solid #989797;
+    padding: 20px;
+    font-family: 'Segoe UI'; }
+    .content .nav-stacked li a:hover {
+      background-color: #989797; }
+  .content .greeting {
+    padding: 20px; }
+  .content h1 {
+    font-family: 'Julius Sans One', sans-serif; }
+  .content .nav-justified {
+    margin-bottom: 40px; }
+    .content .nav-justified li a {
+      border-radius: 0;
+      color: #989797; }
+      .content .nav-justified li a:hover {
+        background-color: #cbcaca;
+        color: #FFF;
+        font-size: 1.15em; }
+    .content .nav-justified li a.Page {
+      background-color: #cbcaca;
+      color: #FFF;
+      font-size: 1.15em; }
+  .content .fc-day-header {
+    background-color: #7f7d7d;
+    color: #e0e0df;
+    font-family: Calibri; }
+  .content .fc-event {
+    background-color: #00af54;
+    border: none;
+    text-align: center; }
+
+.dashboard {
+  background-color: #e0e0df;
+  padding: 0px; }
+  .dashboard header hgroup {
+    text-align: center; }
+  .dashboard #picture {
+    width: 100%;
+    height: 16em;
+    overflow: hidden; }
+    .dashboard #picture img {
+      margin-top: -95px;
+      margin-left: -75px; }
+
+.DivBtn, .AddTeam, .ScheduleGame {
+  text-align: center;
+  cursor: pointer;
+  line-height: 35px;
+  color: #e0e0df;
+  background-color: #00af54;
+  padding: 0px; }
+
+.AddTeam {
+  border-radius: 10px 0 0 0; }
+  .AddTeam:hover {
+    background-color: #00c861; }
+
+.ScheduleGame {
+  border-radius: 0 10px 0 0; }
+  .ScheduleGame:hover {
+    background-color: #00c861; }

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html ng-app="soccerApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Julius+Sans+One' rel='stylesheet' type='text/css'>
+    <link href="~/Content/SassySoccer.css" rel="stylesheet" />
+    <link href="~/Content/fullcalendar.css" rel="stylesheet" />
+    <link href="~/Content/jquery.datetimepicker.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/Html5Forms.js" data-webforms2-support="date" data-webforms2-force-js-validation="true" data-lang="qq">
+    </script>
+    <!--[if lt IE 9]>
+    <script src="~/Scripts/html5shiv.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<body>
+
+    @RenderBody()
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery.datetimepicker.js"></script>
+    <script src="~/Scripts/fullcalendar.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

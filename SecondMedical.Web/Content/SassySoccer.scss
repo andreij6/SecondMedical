@@ -1,0 +1,158 @@
+﻿$bckClr: #989797;
+$accentClr: #ac9b6e;
+$btnClr: lighten(#009548, 5);
+$fontClr: #e0e0df;
+
+html {
+    height: 100%;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: $bckClr;
+    height: 100%;
+}
+
+.Alegrey {
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.content {
+    background-color: darken($bckClr, 10);
+    border-radius: 10px;
+    padding: 0px;
+    min-height: 50%;
+    margin-bottom: 75px;
+
+    .list {
+        padding: 0px;
+    }
+
+    .nav-header {
+        padding: 10px;
+        font-family: Calibri;
+        font-weight: bold;
+        font-size: 1.5em;
+        color: lighten(#7f7d7d, 15);
+    }
+
+    .nav-stacked li a {
+        border-radius: 0;
+        color: $fontClr;
+        text-align: center;
+        border-bottom: 1px solid $bckClr;
+        padding: 20px;
+        font-family: 'Segoe UI';
+
+        &:hover {
+            background-color: $bckClr;
+        }
+    }
+
+    .greeting {
+        padding: 20px;
+    }
+
+    h4 {
+        @extend .Alegrey;
+    }
+
+    h1 {
+        font-family: 'Julius Sans One', sans-serif;
+    }
+
+    .nav-justified {
+        margin-bottom: 40px;
+
+        li a {
+            border-radius: 0;
+            color: $bckClr;
+
+            &:hover {
+                background-color: lighten($bckClr, 20);
+                color: #FFF;
+                @extend .Alegrey;
+                font-size: 1.15em;
+            }
+        }
+
+        li a.Page {
+            background-color: lighten($bckClr, 20);
+            color: #FFF;
+            @extend .Alegrey;
+            font-size: 1.15em;
+        }
+    }
+
+    .fc-day-header {
+        background-color: #7f7d7d;
+        color: $fontClr;
+        font-family: Calibri;
+    }
+
+    .fc-header-title h2 {
+        @extend .Alegrey;
+    }
+
+    .fc-day-number {
+        @extend .Alegrey;
+    }
+
+    .fc-event {
+        background-color: $btnClr;
+        border: none;
+        text-align: center;
+    }
+}
+
+.dashboard {
+    background-color: $fontClr;
+    padding: 0px;
+
+    header {
+        hgroup {
+            text-align: center;
+        }
+    }
+
+    #picture {
+        width: 100%;
+        height: 16em;
+        overflow: hidden;
+
+        img {
+            margin-top: -95px;
+            margin-left: -75px;
+        }
+    }
+}
+
+.DivBtn {
+    @extend .Alegrey;
+    text-align: center;
+    cursor: pointer;
+    line-height: 35px;
+    color: #e0e0df;
+    background-color: $btnClr;
+    padding: 0px;
+}
+
+.AddTeam {
+    @extend .DivBtn;
+    border-radius: 10px 0 0 0;
+
+    &:hover {
+        background-color: lighten($btnClr, 5);
+    }
+}
+
+.ScheduleGame {
+    @extend .DivBtn;
+    border-radius: 0 10px 0 0;
+
+    &:hover {
+        background-color: lighten($btnClr, 5);
+    }
+}
+

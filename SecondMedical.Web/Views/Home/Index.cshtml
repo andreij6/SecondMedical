@@ -1,0 +1,104 @@
+﻿<div class="container content" ng-controller="IndexCtrl">
+    <section class="col-md-2 list">
+        <div data-toggle="modal" data-target="#myModal" ng-click="AddTeamUI()" class="AddTeam">Add A Team</div>
+        <ul class="nav nav-pills nav-stacked">
+            <li class="nav-header">Teams</li>
+        </ul>
+        <ul class="nav nav-pills nav-stacked" ng-repeat="team in Teams">
+            <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="TeamCrudUI(team)">{{team.Name}}</a></li>
+        </ul>
+
+    </section>
+    
+    <ng-view></ng-view>
+    
+
+    <section class="col-md-2 list">
+        <div class="ScheduleGame" data-toggle="modal" data-target="#myModal" ng-click="ScheduleGameUI()">Schedule A Game</div>
+        <ul class="nav nav-pills nav-stacked">
+            <li class="nav-header">Games</li>
+        </ul>
+        <ul class="nav nav-pills nav-stacked" ng-repeat="game in Games">
+            <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="GameCrudUI(game)">{{game.TeamOne.Name}} vs {{game.TeamTwo.Name}}</a></li>
+        </ul>
+    </section>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">{{ModalTitle}}</h4>
+                </div>
+                <div class="modal-body" ng-show="showTeamCrud">
+                    <form>
+                        <div class="form-group">
+                            <label>Team Name</label>
+                            <input type="text" class="form-control" placeholder="Enter A Team Name" ng-model="CurrentTeam.Name">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-body" ng-show="showGameCrud">
+                    <form>
+                        <div class="form-group">
+                            <h3>Current Time {{Game.Date | date : 'short'}}</h3>
+                            <label>Reschedule Game</label>
+                            <input class="datetimepicker" ng-model="game.Date" type="text"></div>
+                    </form>
+                </div>
+                <div class="modal-body" ng-show="newTeamEditor">
+                    <form>
+                        <div class="form-group">
+                            <label>Team Name</label>
+                            <input type="text" class="form-control" placeholder="Enter A Team Name" ng-model="name">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-body" ng-show="newGameEditor">
+                    <form>
+                        <div class="form-group">
+                            <label>Opponent 1</label>
+                            <select ng-model="game.TeamOne" ng-change="OppValidation()" ng-options="team.Name for team in Teams"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>Opponent 2</label>
+                            <select ng-model="game.TeamTwo" ng-change="OppValidation()" ng-options="team.Name for team in Teams"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>Game Time</label>
+                            <!-- <input type="datetime-local" > -->
+                            <input class="datetimepicker" ng-model="game.Date" type="text">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                    <button type="button" class="btn btn-danger"  data-dismiss="modal"  ng-show="showTeamCrud" ng-click="RemoveTeam(CurrentTeam)">Remove Team</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"  ng-show="showTeamCrud" ng-click="UpdateTeam(CurrentTeam)">Save changes</button>
+
+                    <button type="button" class="btn btn-danger"  data-dismiss="modal"  ng-show="showGameCrud" ng-click="CancelGame(Game)">Cancel Game</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"  ng-show="showGameCrud" ng-click="UpdateGame(Game)">Save changes</button>
+
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"  ng-show="newTeamEditor" ng-click="AddTeam(name)">Add Team</button>
+
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"  ng-show="newGameEditor" ng-click="ScheduleGame(game)" ng-if="valid">Add Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+@section scripts {
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-animate.min.js"></script>
+    <script src="~/App/app.js"></script>
+    <script src="~/App/services/Warehouse.js"></script>
+    <script src="~/App/services/WebAPI.js"></script>
+    <script src="~/App/Controllers/HomeCtrl.js"></script>
+    <script src="~/App/Controllers/IndexCtrl.js"></script>
+}
