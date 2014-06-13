@@ -43,7 +43,6 @@ soccerApp.controller('IndexCtrl', function ($scope, WebAPI, Warehouse) {
     $scope.GetHomeVM        = function () {
         WebAPI.getHomeVM().then(
             function (data) {
-                console.log(data);
                 Warehouse.Games = data.Games;
                 Warehouse.Teams = data.Teams;
 
@@ -53,7 +52,6 @@ soccerApp.controller('IndexCtrl', function ($scope, WebAPI, Warehouse) {
                 
 
                 Warehouse.Options.push({ Name: "All" });
-                console.log("here");
                 for (var x in Warehouse.Teams) {
                     Warehouse.Options.push(Warehouse.Teams[x]);
                 }

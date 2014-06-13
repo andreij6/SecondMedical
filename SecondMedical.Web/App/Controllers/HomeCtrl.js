@@ -68,12 +68,9 @@ soccerApp.controller('HomeCtrl', function ($scope, Warehouse) {
         for (var x in Warehouse.Teams) {
             $scope.Options.push(Warehouse.Teams[x]);
         }
-        console.log($scope.Options);
     };
 
     $scope.showTeamSchedule = function () {
-        console.log($scope.Selection);
-
         if ($scope.Selection.Name == "All") {
             $("#calendar").html("");
             $scope.FormatSchedule();
