@@ -16,6 +16,11 @@
                 <li><a href="#" class="Page">Schedule</a></li>
             </ul>
         </div>
+        <div class="col-md-3 pull-right" id="scheduleSelector">
+            <label>Team Schedule</label>
+            <select ng-init="setOptions()" ng-model="Selection" ng-change="showTeamSchedule()" ng-options="option.Name for option in Options"></select>
+        </div>
+
 
     </article>
     <article ng-init="FormatSchedule()">

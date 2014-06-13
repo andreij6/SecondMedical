@@ -2,9 +2,10 @@
 
 soccerApp.controller('IndexCtrl', function ($scope, WebAPI, Warehouse) {
     $scope.CurrentTeam = {};
+    $scope.Options = [];
 
     jQuery('.datetimepicker').datetimepicker();
-    
+
     $scope.ModalTitle = "Title";
 
     $scope.ModalBody        = function (showMe) {
@@ -48,6 +49,14 @@ soccerApp.controller('IndexCtrl', function ($scope, WebAPI, Warehouse) {
 
                 $scope.Teams = Warehouse.Teams;
                 $scope.Games = Warehouse.Games;
+
+                
+
+                Warehouse.Options.push({ Name: "All" });
+                console.log("here");
+                for (var x in Warehouse.Teams) {
+                    Warehouse.Options.push(Warehouse.Teams[x]);
+                }
             },
             function (status) {
                 console.log(status);

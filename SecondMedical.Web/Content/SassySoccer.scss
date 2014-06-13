@@ -126,6 +126,12 @@ body {
             margin-left: -75px;
         }
     }
+
+    .teamschedule {
+        text-align: center;
+        padding: 5px;
+        margin-bottom: 20px;
+    }
 }
 
 .DivBtn {
@@ -154,5 +160,9 @@ body {
     &:hover {
         background-color: lighten($btnClr, 5);
     }
+}
+
+#scheduleSelector {
+    margin-bottom: 35px;
 }
 

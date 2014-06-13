@@ -71,6 +71,10 @@ body {
     .dashboard #picture img {
       margin-top: -95px;
       margin-left: -75px; }
+  .dashboard .teamschedule {
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 20px; }
 
 .DivBtn, .AddTeam, .ScheduleGame {
   text-align: center;
@@ -89,3 +93,6 @@ body {
   border-radius: 0 10px 0 0; }
   .ScheduleGame:hover {
     background-color: #00c861; }
+
+#scheduleSelector {
+  margin-bottom: 35px; }
