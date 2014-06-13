@@ -87,6 +87,7 @@ soccerApp.controller('IndexCtrl', function ($scope, WebAPI, Warehouse) {
                     newTeam.Name = $scope.name;
                     newTeam.Id = data;
                     Warehouse.Teams.push(newTeam);
+                    $scope.name = " ";
                 },
                 function (status) {
                     console.log(status);
