@@ -80,19 +80,27 @@ soccerApp.controller('IndexCtrl', function ($scope, WebAPI, Warehouse) {
         $scope.ModalTitle = "New Team";
     };
 
-    $scope.AddTeam          = function (name) {
-        WebAPI.addTeam(name).then(
-                function (data) {
-                    var newTeam = {};
-                    newTeam.Name = $scope.name;
-                    newTeam.Id = data;
-                    Warehouse.Teams.push(newTeam);
-                    $scope.name = " ";
-                },
-                function (status) {
-                    console.log(status);
-                }
-            );
+    $scope.AddTeam = function (name) {
+        if(name)
+        {
+
+
+            WebAPI.addTeam(name).then(
+                    function (data) {
+                        var newTeam = {};
+                        newTeam.Name = $scope.name;
+                        newTeam.Id = data;
+                        Warehouse.Teams.push(newTeam);
+                        $scope.name = " ";
+                    },
+                    function (status) {
+                        console.log(status);
+                    }
+                );
+        } else {
+            alert("Try again - Be sure to provide a name");
+        }
+
     };
 
     $scope.UpdateTeam       = function (team) {
