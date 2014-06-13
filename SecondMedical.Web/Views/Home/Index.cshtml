@@ -5,7 +5,7 @@
             <li class="nav-header">Teams</li>
         </ul>
         <ul class="nav nav-pills nav-stacked" ng-repeat="team in Teams">
-            <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="TeamCrudUI(team)">{{team.Name}}</a></li>
+            <li><a data-toggle="modal" data-target="#myModal" ng-click="TeamCrudUI(team)">{{team.Name}}</a></li>
         </ul>
 
     </section>
@@ -19,7 +19,7 @@
             <li class="nav-header">Games</li>
         </ul>
         <ul class="nav nav-pills nav-stacked" ng-repeat="game in Games">
-            <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="GameCrudUI(game)">{{game.TeamOne.Name}} vs {{game.TeamTwo.Name}}</a></li>
+            <li><a data-toggle="modal" data-target="#myModal" ng-click="GameCrudUI(game)">{{game.TeamOne.Name}} vs {{game.TeamTwo.Name}}</a></li>
         </ul>
     </section>
 
