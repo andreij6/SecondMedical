@@ -34,7 +34,6 @@ soccerApp.controller('HomeCtrl', function ($scope, Warehouse) {
 
                 event.title = myGames[x].TeamOne.Name + " vs " + myGames[x].TeamTwo.Name;
                 event.start = myGames[x].Date;
-                event.end   = myGames[x].End;
 
                 $scope.schedule.push(event);
 

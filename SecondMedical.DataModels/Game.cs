@@ -17,6 +17,5 @@ namespace SecondMedical.DataModels
         public virtual Team TeamTwo     { get; set; }
 
         public DateTime Date { get; set; }
-        public DateTime End { get; set; }
     }
 }

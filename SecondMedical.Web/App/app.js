@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-var soccerApp = angular.module('soccerApp', ['ngRoute', 'ngAnimate']);
+var soccerApp = angular.module('soccerApp', ['ngRoute']);
 
 soccerApp.config(
     function ($routeProvider)
@@ -18,3 +18,4 @@ soccerApp.config(
             }
         ).otherwise({ redirectTo: '/'})
     })
+
